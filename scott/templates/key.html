@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  
+{% endblock %}
+{% block content %}
+  <section id="content" role="main" class="aui-page-focused aui-page-focused-small">
+<div class="aui-page-panel margin-fix">
+    <div class="aui-page-panel-inner">
+        <section class="aui-page-panel-content">
+            <h2><center>CRAWL</center></h2>
+            <form action="#" method="post" id="d" class="aui top-label">
+                <fieldset>
+                   <div class="field-group">
+                        <label for="d-fname">Keyword</label>
+                        <input class="text long-field" type="text" id="d-fname" name="d-fname" title="Keyword">
+                    </div>
+                </fieldset>
+                <div class="buttons-container">
+                    <div class="buttons"> <center>
+                        <input class="aui-button aui-button-primary" type="submit" id="submit" name="submit" value="Crawl">
+                      </center>
+                    </div>
+                </div>
+            </form>    
+        </section>    
+    </div>
+</div>
+</section>
+{% endblock %}

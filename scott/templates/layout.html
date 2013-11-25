@@ -1,12 +1,15 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>key</title>
-    <link rel="stylesheet" href="aui/css/aui-all.css" media="all">
+	{% block head %}
+    <title>Scott</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aui-all.css') }}" media="all">
     <!--[if lt IE 9]><link rel="stylesheet" href="aui/css/aui-ie.css" media="all"><![endif]-->
     <!--[if IE 9]><link rel="stylesheet" href="aui/css/aui-ie9.css" media="all"><![endif]-->
-    <script src="aui/js/aui-all.js"></script>
+    <script src="{{ url_for('static', filename='js/aui-all.js') }}"></script>
     <!--[if lt IE 9]><script src="aui/js/aui-ie.js"></script><![endif]-->
+    {% endblock %}
 </head>
 <body id="aui-flatpack" >
   <div id="page">
@@ -22,11 +25,11 @@
           <ul class="aui-nav">
               <li><a href="#dropdown2-jira3" aria-owns="dropdown2-jira3" aria-haspopup="true" class="aui-dropdown2-trigger" aria-controls="dropdown2-header7">Menu<span class="aui-icon-dropdown"></span></a>
                 <div class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" id="dropdown2-jira3" style="display: none; top: 40px; min-width: 160px; left: 1213px; " aria-hidden="true">
-                   <div class="aui-dropdown2-section">
+                  <div class="aui-dropdown2-section">
                   <ul>
-                    <li><a href="table_all.html">All Results</a></li>
-                    <li><a href="tabl_optm.html">Optimized Result</a></li>
-                    <li><a href="tbl_nonopt.html">Nonoptimized Table</a></li>
+                    <li><a href="/all">All Results</a></li>
+                    <li><a href="/optimized">Optimized Result</a></li>
+                    <li><a href="/nonoptimized">Nonoptimized Table</a></li>
                   </ul>
                   </div>
                 </div>
@@ -47,7 +50,7 @@
                 <div class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" id="dropdown2-header7" style="display: none; top: 40px; min-width: 160px; left: 1213px; " aria-hidden="true">
                     <div class="aui-dropdown2-section">
                         <ul>
-                            <li><a href="setn.html" class="active">Settings</a></li>
+                            <li><a href="#" class="active">Settings</a></li>
                             <li><a href="#">Keyboard shortcuts</a></li>
                             <li><a href="#">About</a></li>
                         </ul>
@@ -86,29 +89,7 @@
 
 <!-- App Header goes inside #header -->
 </header>
-<section id="content" role="main" class="aui-page-focused aui-page-focused-small">
-<div class="aui-page-panel margin-fix">
-    <div class="aui-page-panel-inner">
-        <section class="aui-page-panel-content">
-            <h2><center>CRAWL</center></h2>
-            <form action="#" method="post" id="d" class="aui top-label">
-                <fieldset>
-                   <div class="field-group">
-                        <label for="Keyword">Keyword<span class="aui-icon icon-required"> required</span></label>
-                        <input class="text long-field" type="text" id="Keyword" name="Keyword" title="Keyword">
-                    </div>
-                </fieldset>
-                <div class="buttons-container">
-                    <div class="buttons"> <center>
-                        <input class="aui-button aui-button-primary" type="submit" id="submit" name="submit" value="Crawl">
-                      </center>
-                    </div>
-                </div>
-            </form>    
-        </section>    
-    </div>
-</div>
-</section>
+<div id="content">{% block content %}{% endblock %}</div>
 </div>
 </body>
 </html>

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  
+{% endblock %}
+{% block content %}
+ <section id="content" role="main">
+    <header class="aui-page-header">
+      <div class="aui-page-header-inner">
+        <div class="aui-page-header-main">
+          <h1>ALL RESULT</h1>
+        </div><!-- .aui-page-header-main -->
+      </div>
+      <!-- .aui-page-header-inner -->
+    </header><!-- .aui-page-header -->
+    <div class="aui-page-panel">
+      <div class="aui-page-panel-inner">
+        <section id="content" role="main" >
+          <table id="mySortableTable" class="aui aui-table-sortable">
+            <thead>
+              <tr>
+                <th>url</th>
+                <th>store_name</th>
+                <th>phone_no</th>
+                <th>address</th>
+                <th>contact_name</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                <td>{{result.url}}</td>
+                <td>{{result.store_name}}</td>
+                <td>{{result.phone_no}}</td>
+                <td>{{result.address}},{{result.state}}</td>
+                <td>{{result.contact_name}}</td>
+                </tr>
+            {% endfor %}
+              
+                
+              </tbody>
+            </table>
+          </section>
+        </div><!-- .aui-page-panel-inner -->
+      </div><!-- .aui-page-panel -->
+    </section>
+{% endblock %}
